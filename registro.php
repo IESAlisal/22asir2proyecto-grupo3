@@ -61,7 +61,7 @@ if (isset($_POST['registrar']))
       <input type="password" name="password2" class="form-control" placeholder="Repita la contraseña" required>
       
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="registrar">Registrar</button>
-      <p class="mt-5 mb-3 text-muted">&copy; I.E.S. Alisal</p>
+      <p class="mt-5 mb-3 text-muted">&copy; Agustín, Raúl y Javier</p>
     </form>
     <br>
 	<a href="login.php">Volver</a>
