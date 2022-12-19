@@ -1,8 +1,3 @@
-/* 
-    Created on : 29-sep-2018, 12:00
-    Author     : ivan
-*/
-
 :-moz-placeholder {
     color: blue;
 }
@@ -33,11 +28,9 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
     position:relative;
 }
 
-
 .formulario li:first-child, .formulario li:last-child {
     border-bottom:1px solid #777;
 }
-
 
 .formulario h2 {
     margin:0;
@@ -49,9 +42,6 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
     display:inline;
     float:right;
 }
-
-
-
 
 .formulario label {
     width:150px;
@@ -73,13 +63,6 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
 .formulario button {margin-left:156px;}
 
 
-
-
-
-
-
-
-
 .formulario input, .formulario textarea { 
     border:1px solid #aaa;
     box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
@@ -91,8 +74,6 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
     box-shadow: 0 0 3px #aaa; 
 }
 
-
-/* Estilos de validación HTML5 */
 .formulario input:required, .formulario textarea:required {
     background: #fff url(../images/asteriscoRojo.png) no-repeat 98% center;
 }
@@ -110,8 +91,6 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
 }
 
 
-
-/* === Consejo === */
 .consejo {
     background: #d45252;
     border-radius: 3px 3px 3px 3px;
@@ -143,11 +122,6 @@ body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", san
     color: #28921f;
 }
 
-
-
-
-
-/* Estilos del botón */
 button.submit {
     background-color: #68b12f;
     background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
@@ -188,12 +162,6 @@ button.submit:active {
      
 }
 
-
-
-
-
-
-/***TABLA ****/
 
 .tabla
 { 
