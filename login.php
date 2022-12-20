@@ -37,12 +37,10 @@ if (isset($_POST['login'])) {
   <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
     <h2>Login</h2>
     <form class="form-signin" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
-      <form class="login">
-      <label>Usuario</label>
-      <input type="text" id="user">
-      <label>Contraseña</label>
-      <input type="password" id="password">
-      </br>
+      <label for="usuario" class="sr-only">Usuario</label>
+      <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+      <label for="password" class="sr-only">Contraseña</label>
+      <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
       <button>Iniciar Sesion</button> 
       <p>¿Aún no tienes cuenta?</p>
       <a class="btn btn-primary" href="registro.php">Registrate aqui</a>

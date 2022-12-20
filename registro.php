@@ -44,12 +44,12 @@ if (isset($_POST['registrar']))
     
     <h2>Registro de usuarios</h2>
     <form class="form-signin" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
-      <label>Usuario</label>
-      <input type="text" name="nombre" class="form-control" required autofocus>
-      <label>Contraseña</label>
-      <input type="password" name="password" class="form-control" required>
-      <label>Repita la contraseña</label>
-      <input type="password" name="password2" class="form-control" required>
+      <label for="inputEmail" class="sr-only">Nombre</label>
+      <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+      <label for="inputPassword" class="sr-only">Repita la contraseña</label>
+      <input type="password" name="password2" class="form-control" placeholder="Repita la contraseña" required>
       </br>
       <button type="submit" name="registrar">Registrar</button>
       <p class="mt-5 mb-3 text-muted">&copy; Grupo3 </p>
