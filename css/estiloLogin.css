@@ -5,8 +5,17 @@ body {
     font-weight: 400;
     font-size: 0.75rem; 
     line-height: 1.15;
-    background-color: #3b4465;
     position: relative;
+}
+body{
+    background: #e554ff;
+    background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
+    background: -webkit-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -o-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -ms-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 h2 {
     text-align: center;
