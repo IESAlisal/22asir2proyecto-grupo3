@@ -55,6 +55,7 @@ a {
     text-decoration: none;
     text-align: center;
     transition: all 0.5s;
+    margin: auto;
 }
 a:hover {
     color:purple; font-size:12.1px; 
