@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
       <label for="password" class="sr-only">Contraseña</label>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
       </br>
-      <button href="index.php">Iniciar Sesion</button> 
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Iniciar Sesion</button> 
       <p>¿Aún no tienes cuenta?</p>
       <a class="btn btn-primary" href="registro.php">Registrate aqui</a>
     </form>
