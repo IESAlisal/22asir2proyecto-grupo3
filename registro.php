@@ -42,7 +42,7 @@ if (isset($_POST['registrar']))
     <?php if(isset($mensaje)) echo "<div class='aviso-linea'>$mensaje</div>"; ?>
     <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
     
-    <h2>Registro de usuarios</h2>
+    <h2 class="h3 mb-3 font-weight-normal">REGISTRO</h2>
     <form class="form-signin" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <label for="inputEmail" class="sr-only">Nombre</label>
       <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>

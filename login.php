@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
   <body class="text-center">
     
   <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
-    <h2>Login</h2>
+    <h2 class="h3 mb-3 font-weight-normal">Login</h2>
     <form class="form-signin" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <label for="usuario" class="sr-only">Usuario</label>
       <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
