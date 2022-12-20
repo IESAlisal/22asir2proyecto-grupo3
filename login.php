@@ -41,6 +41,7 @@ if (isset($_POST['login'])) {
       <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
       <label for="password" class="sr-only">Contraseña</label>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+      </br>
       <button>Iniciar Sesion</button> 
       <p>¿Aún no tienes cuenta?</p>
       <a class="btn btn-primary" href="registro.php">Registrate aqui</a>
