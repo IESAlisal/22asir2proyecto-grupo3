@@ -14,6 +14,7 @@
 		    $librosprecios = $_POST["librosprecios"];
 			$precio = $_POST["precio"];
 			modificarLibroMySQLi($librosprecios, $precio);
+			echo "<div class='aviso'>Actualizados los precios</div>";
 		}
 		else{
 		}
@@ -48,35 +49,34 @@
 		?>
 		<form id="actualizarPrecio" method="post" action="">
 		<table class="tabla">
-
-		<tbody>
+		<thead>
 			<tr>
 				<th>Titulo</th>
 				<th>Precio</th>
 			</tr>
-			<tr>
+		</thead>
+		<tbody>
 			<?php
 		        
 		        $libro = $_POST['libro'];
 		        $librosprecios = getLibrosPrecio($libro);
 		        foreach ($librosprecios as $libroprecio) 
 		        {
-		        	echo "<input type='hidden' name='libro' value='{$_POST['libro']}'>"
+		        	echo "<input type='hidden' name='libro' value='{$_POST['libro']}'>"; //Para que se mantenga al recargar la página
 		        	echo "<tr>"."<input type='hidden' name='librosprecios[]' value='{$libroprecio['numero_ejemplar']}'>";
 		        	echo "<td>".$libroprecio["titulo"]."</td>";
 		        	echo "<td><input type='text' size='4' name='precio[]' value='{$libroprecio['precio']}'> Euros </td></tr>";
 		        }
 			?>
-			</tr>
 		</tbody>
 	</table>
 		<button class="submit actualizar" type="submit" name="actualizar">Actualizar</button>
-</br>
+	</br>
 		<?php
-		    }
+			}
 		?>		
 		<br>
-	<a href="index.php">Volver</a>
+		<a href="index.php">Volver</a>
 	</form>
 	
 		
