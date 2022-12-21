@@ -29,7 +29,7 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
                 <li><a href="libros_borrar_MySQLi.php">Baja Libros</a></li>
             </ul> 
             <ul>
-                <li><a href="descargarCV.php">Descargar Curriculum</a></li>
+                <li><a href="CV/Curriculum.pdf">Descargar Curriculum</a></li>
             </ul> 
             <ul>
                 <li><a href="subirCV.php">Subir Curriculum</a></li>
