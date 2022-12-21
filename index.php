@@ -29,6 +29,12 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
                 <li><a href="libros_borrar_MySQLi.php">Baja Libros</a></li>
             </ul> 
             <ul>
+                <li><a href="descargarCV.php">Descargar Curriculum</a></li>
+            </ul> 
+            <ul>
+                <li><a href="subirCV.php">Subir Curriculum</a></li>
+            </ul> 
+            <ul>
                 <form action='logoff.php' method='post'>
                         <input type='submit' name='desconectar' class="btn btn-warning" value='Desconectar <?php echo
                     $_SESSION['usuario'];
