@@ -38,6 +38,7 @@ th {
     text-align: left;
 }
 td {
+    text-align: center;
     background-color: black;
     color: white;
     border-radius: 5px;
