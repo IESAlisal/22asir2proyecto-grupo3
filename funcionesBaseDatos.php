@@ -57,10 +57,8 @@ function crearBBDD($basedatos){
     $stm->bind_result($nombre_db);
     $existe=$stm->fetch();
     $stm->close();
-   // $existe=0;
     if(!$existe){
-        //crear la base de datos
-        if ($conexion->query("CREATE DATABASE $basedatos") === true) { //ejecutando query
+        if ($conexion->query("CREATE DATABASE $basedatos") === true) {
             
             echo "Base de datos $basedatos creada en MySQL por Objetos ";
             echo "<br>";
@@ -71,7 +69,6 @@ function crearBBDD($basedatos){
             echo "Error al ejecutar consulta " . $this->conexion->error . " ";
              $existe=1;  
         }
-        print_r ("Estoy aqui0");
         
     }
     $conexion->close();
@@ -84,8 +81,6 @@ function crearTablas($basedatos){
     ini_set("display_errors",true);
     $conexion = getConexionMySQLi_sin_bbdd();
     $conexion->select_db($basedatos); 
-    //$conexion = getConexionMySQLi();
-    //print_r ("Estoy aqui0.1");
     $existe_l=0;
     $libros2="
         CREATE TABLE libros (
@@ -96,10 +91,8 @@ function crearTablas($basedatos){
         numero_ejemplar int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY 
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
         ";
-    
-    // Pasamos la variable $strInsert para ejecurar el query
-    //print_r ("Estoy aqui1");
-    if ($conexion->query($libros2) === true) { //ejecutando query para la creación de una tabla en MySQL
+
+    if ($conexion->query($libros2) === true) { 
         
         echo "Tabla libros creada en MYSQL";
         echo "<br>";
@@ -160,7 +153,6 @@ function registrarUsuarioMySQLi($usuario, $password)
     $correcto = false;
     
     $conexion  = getConexionMySQLi();
-    //$password = md5($password); //Se puede encriptar mediante php o mediante MySQL
     $sql      = "INSERT INTO logins (usuario,passwd) VALUES (?,md5(?))";
     $consulta = $conexion->prepare($sql);
     $consulta->bind_param("ss",$usuario,$password);
@@ -245,22 +237,17 @@ function getLibros()
 
 function getLibrosTitulo()
 {
-    /*La tabla libros compuesta por los campos:
-     * titulo, ciudad, conferencia y división
-     * */
     $mysqli = getConexionMySQLi();
     $consulta = "select titulo from libros";
     
     if ($resultado = $mysqli->query($consulta))
     {
         
-        /* obtener el array de objetos */
         while ($libro = $resultado->fetch_object())
         {
             $libros[] = $libro->titulo;
         }
         
-        /* liberar el conjunto de resultados */
         $resultado->close();
     }
     $mysqli->close();
@@ -294,7 +281,6 @@ function borrarLibro($numeroEjemplar)
 
     $sentencia->bindParam(1, $numeroEjemplar);
     
-    //$numero = $sentencia->execute();
     unset($sentencia);
 
     unset($conexion);
@@ -305,15 +291,11 @@ function borrarLibro($numeroEjemplar)
 function borrarLibroMySQLi($numeroEjemplar)
 {
     
-    //if($numeroEjemplar===null || !isnumeric($numeroEjemplar)){
-      //  return 0;
-    //}
-    
     $conexion = getConexionMySQLi();
     $precio = 0;
     
-    $todo_bien = true;            // Definimos una variable para comprobar la ejecuciÃ³n
-    $conexion->autocommit(false); // Deshabilitamos el modo transaccional automÃ¡tico
+    $todo_bien = true;            
+    $conexion->autocommit(false);
     
     
     $consulta = "select precio from libros WHERE numero_ejemplar = $numeroEjemplar";
