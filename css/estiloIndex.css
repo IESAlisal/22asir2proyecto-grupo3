@@ -1,9 +1,12 @@
 body {
-    text-align: center;
+    place-items: center;
     font-family: 'Montserrat', sans-serif;
     color: rgb(0, 0, 0);
-    position: absolute;
-    background-size: cover;
+    font-weight: 400;
+    font-size: 0.75rem; 
+    line-height: 1.15;
+    position: relative;
+    
 }
 /*Color fondo */
 body{
@@ -22,6 +25,8 @@ h2 {
     color: #ffffff;
     text-decoration: underline
 }
+
+/* Lista */
 li {
     background-color: #fff;
     border: none;
@@ -34,14 +39,14 @@ li {
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-label {
-    color: #bad3db;
-    padding: 5px;
-    text-align: left;
+ul {
+    align-items: center;
 }
-/*Efecto boton*/
+
+/*Boton*/
 form {
     text-align: center;
+    margin: auto;
 }
 input {
     background-color: #a7e245;
@@ -54,9 +59,9 @@ input {
     margin: auto;
 }
 
-/*Efecto enlace*/
+/*Enlace*/
 a {
-    color: #db41c7;
+    color: #ae31e7;
     text-decoration: none;
     text-align: center;
     transition: all 0.5s;
