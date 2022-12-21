@@ -32,7 +32,7 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
                 <li><a href="CV/Curriculum.pdf">Descargar Curriculum</a></li>
             </ul> 
             <ul>
-                <li><a href="CV/FormularioCV.html">Subir Curriculum</a></li>
+                <li><a href="FormularioCV.html">Subir Curriculum</a></li>
             </ul> 
             <ul>
                 <form action='logoff.php' method='post'>
