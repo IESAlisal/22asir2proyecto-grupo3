@@ -44,7 +44,7 @@ if(isset($_POST['borrar']) && isset($_POST["libro"]))
 				?>
 				</li>
 			</br>
-				<a href="libros_MySQLi.php">Volver</a>
+				<a href="index.php">Volver</a>
 			</ul>
 		</form>
 	</body>

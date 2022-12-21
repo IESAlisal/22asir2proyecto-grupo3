@@ -14,7 +14,6 @@
 		    $librosprecios = $_POST["librosprecios"];
 			$precio = $_POST["precio"];
 			modificarLibroMySQLi($librosprecios, $precio);
-			echo "<div class='aviso'>Actualizados los precios</div>";
 		}
 		else{
 		}
