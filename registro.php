@@ -29,6 +29,7 @@ if (isset($_POST['registrar']))
         $error = "Las contraseñas no coinciden";
 }
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>

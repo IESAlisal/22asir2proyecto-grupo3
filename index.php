@@ -1,11 +1,12 @@
 <?php
 include_once 'funcionesBaseDatos.php';
-session_start();
-if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
-    header("Location: index.php");
-}
 
+session_start();
+    if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
+        header("Location: index.php");
+    }
 ?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,13 +19,13 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
         <div class="form-box">
             <h1 class="form-title">Aplicacion de libros</h1>
             <ul>
-                <a class="form-enlace" href="libros_MySQLi.php">Alta Libros</a>
+                <a class="form-enlace" href="libros_alta.php">Alta Libros</a>
             </ul>
             <ul> 
                 <a class="form-enlace" href="libros_actualizar.php">Actualizar Libros</a>
             </ul>
             <ul>
-                <a class="form-enlace" href="libros_borrar_MySQLi.php">Baja Libros</a>
+                <a class="form-enlace" href="libros_borrar.php">Baja Libros</a>
             </ul> 
             <ul>
                 <a class="form-enlace" href="CV/Curriculum.pdf">Descargar Curriculum</a>

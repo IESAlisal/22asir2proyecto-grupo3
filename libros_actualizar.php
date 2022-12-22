@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio 8</title>
+	<title>Actualizar Libros</title>
 	<link rel="stylesheet" media="screen" href="css/estiloActualizar.css" >
 </head>
 <body>

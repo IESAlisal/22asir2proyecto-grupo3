@@ -22,6 +22,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,9 +34,6 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="css/estiloLogin.css">
   </head>
   <body>
-    
-  
-  
     <form class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <h1 class="form-title">Login</h1>
       <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
@@ -45,7 +43,7 @@ if (isset($_POST['login'])) {
       </button>
 
       <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
-      
+
       <p>¿Aún no tienes cuenta?</p>
       <a class="form-register" href="registro.php">Registrate aqui</a> 
     </form>
