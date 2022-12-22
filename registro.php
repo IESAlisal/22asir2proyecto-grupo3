@@ -41,6 +41,9 @@ if (isset($_POST['registrar']))
   </head>
   <body>
     
+    <?php if(isset($mensaje)) echo "<div class='aviso-linea'>$mensaje</div>"; ?>
+    <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
+    
     <form action="form-signin" class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <h1 class="form-title">REGISTRO</h1>
       <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
@@ -50,8 +53,7 @@ if (isset($_POST['registrar']))
         Registrar
       </button>
 
-      <?php if(isset($mensaje)) echo "<div class='aviso-linea'>$mensaje</div>"; ?>
-      <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
+
 
       <p>&copy; Raul, Javier y Agustin</p>
     
