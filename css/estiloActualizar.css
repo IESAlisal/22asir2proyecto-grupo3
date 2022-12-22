@@ -29,6 +29,9 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
+.aviso {
+    text-align: center;
+}
 /*Estilo la tabla entera*/
 .form-table {
     display: flex;
@@ -77,5 +80,52 @@ th {
 td {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #5d5c5d;;
+}
+
+/*Estilizamos los botones de mostrar y actualizar*/
+.form-table button[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #cc00ff;
+    width: 200px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.form-table button[type="submit"] {
+    border: 0;
+    background: #a727e7;
+    cursor: pointer;
+    border: 2px solid #a727e7;
+}
+.form-table button[type="submit"]:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+/*Colocamos la frase libros en el medio*/
+.form-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilizamos el desplegable*/
+.form-desp {
+    border: none;
+    border-bottom: 1px solid #c9c9c9;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
 }
