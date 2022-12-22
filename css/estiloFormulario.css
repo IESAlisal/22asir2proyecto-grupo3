@@ -1,14 +1,24 @@
-body {
-    place-items: center;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-    font-size: 0.75rem; 
-    line-height: 1.15;
-    position: relative;
+/*Estilo para todos los elementos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/*Color fondo */
-body{
+h2{
+    text-align: center;
+}
+
+/*Estilo body*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*Color body*/
+body {
     background: #e554ff;
     background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
@@ -18,36 +28,54 @@ body{
     background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
-h2 {
-    text-align: center;
-    color: #ffffff;
-    text-decoration: underline
-}
-form {
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 400px;
-    padding: 15px;
-    margin: 0 auto;
+
+/*Estilo la tabla entera*/
+.form-table {
     display: flex;
     flex-direction: column;
-    text-align: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 80%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 30px;
+    color: white;
 }
 
-input {
-    text-align: center;
-    background-color: #d7e7f1;
-    border: solid #b4e9fd 1px;
-    border-radius: 5px;
-    height: 25px;
-    width: 93%;
-    margin: auto;
+.form-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 30px 0;
 }
 
-a {
+/*Estilizamos el enlace*/
+.form-enlace {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
-    margin: auto;
-    color: #c20cf0;
+    padding: -10px 20px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/*Estilizamos todas las columnas y tablas*/
+table {
+    border-spacing: 0;
+    margin-top: 1rem;
+}
+
+thead {
+    background-color: #a900fd;
+    color: black;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid;
 }
