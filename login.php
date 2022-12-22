@@ -49,6 +49,7 @@ if (isset($_POST['login'])) {
 
       <p>¿Aún no tienes cuenta?</p>
       <a class="form-register" href="registro.php">Registrate aqui</a> 
+      </br>
       <?php
         $ip_server = $_SERVER['SERVER_ADDR'];
         echo "Server IP Address is: $ip_server";
