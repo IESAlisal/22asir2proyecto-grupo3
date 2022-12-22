@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
     
   <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
   
-    <form action="form-signin" class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>">
+    <form class="form-box" action="form-signin" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>">
       <h1 class="form-title">Login</h1>
       <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
