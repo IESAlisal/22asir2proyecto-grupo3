@@ -16,7 +16,7 @@
 			<h1 class="form-title">INSERTE LOS DATOS DEL <span>LIBRO</span></h1>
 			<div class="datos-wrapper">
 				<div class="datos-form">
-					<h3>Anyade la informacion del libro</h3>
+					<h3>Añade la informacion del libro</h3>
 					<span class="mensaje_obligatorio">* Campo obligatorio</span>
 					<form class="formulario" method="post" action="libros_guardar.php" name="formulario">
 						<p>
@@ -43,7 +43,7 @@
 					</form>
 				</div>
 				<div class="datos-img">
-					<p>aqui va el fondo</p>
+					
 					<a href="libros_datos.php">Mostrar los libros guardados</a>
 					</br>
 					<a href="index.php">Volver</a>

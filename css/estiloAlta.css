@@ -4,10 +4,23 @@
 }
 
 body {
-    background: #181818;
     color: #fff;
     font-family: 'Quicksand', sans-serif;
     padding: 0 1.5em;
+    animation: fadeInRight;
+    animation-duration: 1s;
+}
+
+/*Color body*/
+body {
+    background: #e554ff;
+    background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
+    background: -webkit-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -o-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -ms-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
 /*Estilo al primer div*/
@@ -25,12 +38,12 @@ body {
 }
 
 .form-title span {
-    color: #b70e21;
+    color: #f83af8;
 }
 
 /*Anyadimos la sombra y el padding a los elementos de dentro*/
 .datos-wrapper {
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .datos-wrapper > *{
@@ -66,14 +79,14 @@ body {
     padding: .7em;
     border: none;
     background: none;
-    border-bottom: 1px solid #d63031;
+    border-bottom: 1px solid #f83af8;
     outline: 0;
     color: #fff;
 }
 
 /*Estilizamos el boton del formulario*/
 .datos-form form button {
-    background: #b70e21;
+    background: #f83af8;
     border: 0;
     text-transform: uppercase;
     padding: 1em;
@@ -82,7 +95,7 @@ body {
 /*Damos un efecto al boton*/
 .datos-form form button:hover, 
 .datos-form form button:focus {
-    background: #d63031;
+    background: #ac07f2;
     color: #000;
     cursor: pointer;
     transition: background-color 1s ease-out;
@@ -91,8 +104,8 @@ body {
 
 /*Estilizamos la zona de la imagen*/
 .datos-img {
-    background: #000;
     text-align: center;
+    background-color: #a836ff;
 }
 
 /*Para pantallas grandes*/

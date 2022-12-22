@@ -30,6 +30,9 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Grupo3</title>
+    <!-- Fuente -->
+	  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+    <!-- CSS animado -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/estiloLogin.css">
   </head>
@@ -46,6 +49,10 @@ if (isset($_POST['login'])) {
 
       <p>¿Aún no tienes cuenta?</p>
       <a class="form-register" href="registro.php">Registrate aqui</a> 
+      <?php
+        $ip_server = $_SERVER['SERVER_ADDR'];
+        echo "Server IP Address is: $ip_server";
+      ?>
     </form>
   </body>
 </html>
