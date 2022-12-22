@@ -15,32 +15,28 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
         <link rel="stylesheet" href="css/estiloIndex.css">
     </head>
     <body>
-        <div id="menu">
+        <div class="form-box">
+            <h1 class="form-title">Aplicacion de libros</h1>
             <ul>
-                <h2>Aplicacion de libros</h2>
-            </ul>
-            <ul>
-                <li><a href="libros_MySQLi.php">Alta Libros</a></li>
+                <a class="form-enlace" href="libros_MySQLi.php">Alta Libros</a>
             </ul>
             <ul> 
-                <li><a href="libros_actualizar.php">Actualizar Libros</a></li>
+                <a class="form-enlace" href="libros_actualizar.php">Actualizar Libros</a>
             </ul>
             <ul>
-                <li><a href="libros_borrar_MySQLi.php">Baja Libros</a></li>
+                <a class="form-enlace" href="libros_borrar_MySQLi.php">Baja Libros</a>
             </ul> 
             <ul>
-                <li><a href="CV/Curriculum.pdf">Descargar Curriculum</a></li>
+                <a class="form-enlace" href="CV/Curriculum.pdf">Descargar Curriculum</a>
             </ul> 
             <ul>
-                <li><a href="FormularioCV.html">Subir Curriculum</a></li>
+                <a class="form-enlace" href="FormularioCV.html">Subir Curriculum</a>
             </ul> 
-            <ul>
                 <form action='logoff.php' method='post'>
-                        <input type='submit' name='desconectar' class="btn btn-warning" value='Desconectar <?php echo
+                        <input type='submit' name='desconectar' class="form-logoff" value='Desconectar <?php echo
                     $_SESSION['usuario'];
                     ?>'/>
                 </form>
-            </ul>
         </div>
     </body>
 </html>

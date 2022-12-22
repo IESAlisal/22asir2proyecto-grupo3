@@ -43,14 +43,14 @@ if (isset($_POST['registrar']))
     
     <?php if(isset($mensaje)) echo "<div class='aviso-linea'>$mensaje</div>"; ?>
     <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
-    
+
     <form action="form-signin" class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <h1 class="form-title">REGISTRO</h1>
       <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
       <input type="password" name="password2" class="form-control" placeholder="Repita la contraseña" required>
       <button type="submit" name="registrar">
-        Registrar
+        Registrarse
       </button>
 
 
