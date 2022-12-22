@@ -84,7 +84,7 @@ if ($todoOK)
 
 ?>
 <br>
-<a href="libros.php">Volver</a>
+<a href="libros_alta.php">Volver</a>
 </body>
 </html>
 

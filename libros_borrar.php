@@ -47,6 +47,6 @@ if(isset($_POST['borrar']))
 
 		</form>
 		<br>
-		<a href="libros.php">Volver</a>
+		<a href="libros_alta.php">Volver</a>
 	</body>
 </html>
