@@ -17,11 +17,6 @@ if (isset($_POST['login'])) {
         }
         else
         {
-            $error = "¡Usuario o contraseña no válidos!";
-        }
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -45,6 +40,11 @@ if (isset($_POST['login'])) {
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">
         Iniciar Sesion
       </button>
+                  $error = "¡Usuario o contraseña no válidos!";
+        }
+    }
+}
+?>
       <p>¿Aún no tienes cuenta?</p>
       <a class="btn btn-primary form-register" href="registro.php">Registrate aqui</a> 
     </form>
