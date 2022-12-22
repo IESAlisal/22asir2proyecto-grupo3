@@ -34,7 +34,7 @@ if (isset($_POST['login'])) {
   </head>
   <body>
     
-  <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
+  
   
     <form class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
       <h1 class="form-title">Login</h1>
@@ -43,6 +43,9 @@ if (isset($_POST['login'])) {
       <button type="submit" name="login">
         Iniciar Sesion
       </button>
+
+      <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
+      
       <p>¿Aún no tienes cuenta?</p>
       <a class="form-register" href="registro.php">Registrate aqui</a> 
     </form>
