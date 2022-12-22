@@ -8,9 +8,9 @@ if(!isset($_SESSION["usuario"]) || $_SESSION["usuario"]==null){
 ?>
 <html>
     <head>
-        <title>Aplicacion de Gestion de libros</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestion de libros</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/estiloIndex.css">
     </head>
