@@ -15,7 +15,18 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Quicksand', sans-serif;
-    background-color: #eef4fd;
+}
+
+/*Color body*/
+body {
+    background: #e554ff;
+    background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
+    background: -webkit-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -o-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -ms-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
 /*Estilo la tabla entera*/
@@ -24,8 +35,9 @@ body {
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 80%;
-    background-color: #fff;
+    background-color: rgb(70, 70, 70);
     border-radius: 30px;
+    color: white;
 }
 
 .form-header {
@@ -42,7 +54,7 @@ body {
     align-items: center;
     text-decoration: none;
     padding: -10px 20px 0;
-    color: #000000;
+    color: #ffffff;
     text-transform: uppercase;
     font-size: 14px;
 }
@@ -54,7 +66,8 @@ table {
 }
 
 thead {
-    background-color: #fff7b3;
+    background-color: #a900fd;
+    color: black;
 }
 
 th {
