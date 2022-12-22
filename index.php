@@ -10,9 +10,13 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Gestion de libros</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Fuente -->
+	    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+        <!-- CSS Animado -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="css/estiloIndex.css">
     </head>
     <body>
