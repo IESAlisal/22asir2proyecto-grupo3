@@ -24,7 +24,6 @@ if (isset($_POST['login'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,15 +37,14 @@ if (isset($_POST['login'])) {
   <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
   
     <form action="form-signin" class="form-box" action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>">
-      <h1 class="h3 mb-3 font-weight-normal form-title">Login</h1>
+      <h1 class="form-title">Login</h1>
       <input type="text" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
       <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">
+      <button type="submit" name="login">
         Iniciar Sesion
       </button>
       <p>¿Aún no tienes cuenta?</p>
-      <a class="btn btn-primary form-register" href="registro.php">Registrate aqui</a> 
+      <a class="form-register" href="registro.php">Registrate aqui</a> 
     </form>
-
   </body>
 </html>

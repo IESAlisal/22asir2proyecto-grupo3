@@ -1,14 +1,22 @@
+/*Estilo body*/
 body {
-    place-items: center;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-    font-size: 0.75rem; 
-    line-height: 1.15;
-    position: relative;
+    height: 100%;
 }
-/*Color fondo */
-body{
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeInUp;
+    animation-duration: 1s;
+}
+/*Color body*/
+body {
     background: #e554ff;
     background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
@@ -18,56 +26,67 @@ body{
     background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
-h2 {
+
+/*Le damos estilo tanto a la caja como al titulo*/
+.form-box {
+    width: 300px;
+    padding: 40px;
+    background: #ffffff ;
     text-align: center;
-    color: #ffffff;
-    text-decoration: underline
-}
-form {
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 250px;
-    padding: 15px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-label {
-    color: #bad3db;
-    padding: 5px;
-    text-align: left;
-}
-/*Efecto boton*/
-button{
-    align-items: center;
-    border: none;
-    border-radius: 50px;
-    padding: 5px;
-    width: 40%;
-    margin: auto;
-    transition: 0.5s ease-in-out;
-    background-color: #a7e245;
-    color: #ffffff;
+
+.form-title {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
-input {
-    background-color: #d7e7f1;
-    border: solid #b4e9fd 1px;
-    border-radius: 5px;
-    height: 25px;
-    width: 93%;
-    margin: auto;
-}
-/*Efecto enlace*/
-a {
-    text-decoration: none;
+/*Estilizamos los botones*/
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="password2"],
+.form-box button[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
     text-align: center;
-    transition: all 0.5s;
-    margin: auto;
+    border: 2px solid #cc00ff;
+    width: 200px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    transition: 0.25s;
 }
-a:hover {
-    color:purple; font-size:12.1px; 
+
+/*Animacion de los dos inputs*/
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus {
+    width: 220px;
+    border-color: #6f00ff;
+}
+
+/*Estilizamos el boton.*/
+.form-box button[type="submit"] {
+    border: 0;
+    background: #6307f8;
+    cursor: pointer;
+    border: 2px solid #6307f8;
+}
+.form-box button[type="submit"]:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+/*Estilizamos el enlace*/
+.form-register {
+    color: rgb(174, 0, 255);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.form-register:hover {
+    font-size: 16.5px;
 }
