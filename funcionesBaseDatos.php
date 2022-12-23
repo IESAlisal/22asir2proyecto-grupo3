@@ -15,6 +15,7 @@ function getConexionMySQLi()
     }
     return $mysqli;
 }
+
 function getConexionMySQLi_sin_bbdd()
 {
     $mysqli = new mysqli(HOST, USERNAME, PASSWORD);
@@ -91,7 +92,7 @@ function crearTablas($basedatos){
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     ";
     
-    if ($conexion->query($logins2) === true) { //ejecutando query para la creación de una tabla en MySQL
+    if ($conexion->query($logins2) === true) { 
         
         echo "Tabla logins creada en MYSQL";
         echo "<br>";
@@ -105,7 +106,6 @@ function crearTablas($basedatos){
     $conexion->close();
     if (($existe_l==1) && ($existe_lg==1)) return 1;  
 }
-
 
 function usuarioCorrecto($usuario, $password)
 {
@@ -124,8 +124,6 @@ function usuarioCorrecto($usuario, $password)
     $stm->close();
     return $r;
 }
-
-
 
 function registrarUsuarioMySQLi($usuario, $password)
 {
@@ -166,7 +164,6 @@ function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
         return false;
     }
 }
-
 
 function getLibros()
 {
