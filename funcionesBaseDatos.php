@@ -2,6 +2,24 @@
 
 include_once 'constantes.php';
 
+function getConexionPDO()
+{
+	$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+	try
+	{
+	    $dwes = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USERNAME, PASSWORD, $opciones);
+	    $dwes->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    return $dwes;
+	}
+	catch(Exception $ex)
+	{
+	    echo "<h4>{$ex->getMessage()}</h4>";
+	    return null;
+	}
+}
+
+
+
 function getConexionMySQLi()
 {
     $mysqli = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
@@ -15,7 +33,6 @@ function getConexionMySQLi()
     }
     return $mysqli;
 }
-
 function getConexionMySQLi_sin_bbdd()
 {
     $mysqli = new mysqli(HOST, USERNAME, PASSWORD);
@@ -40,8 +57,10 @@ function crearBBDD($basedatos){
     $stm->bind_result($nombre_db);
     $existe=$stm->fetch();
     $stm->close();
+   // $existe=0;
     if(!$existe){
-        if ($conexion->query("CREATE DATABASE $basedatos") === true) {
+        //crear la base de datos
+        if ($conexion->query("CREATE DATABASE $basedatos") === true) { //ejecutando query
             
             echo "Base de datos $basedatos creada en MySQL por Objetos ";
             echo "<br>";
@@ -52,16 +71,21 @@ function crearBBDD($basedatos){
             echo "Error al ejecutar consulta " . $this->conexion->error . " ";
              $existe=1;  
         }
+        print_r ("Estoy aqui0");
         
     }
     $conexion->close();
-    return $existe;  
+    return $existe;
+   
+    
 }
 
 function crearTablas($basedatos){
     ini_set("display_errors",true);
     $conexion = getConexionMySQLi_sin_bbdd();
     $conexion->select_db($basedatos); 
+    //$conexion = getConexionMySQLi();
+    //print_r ("Estoy aqui0.1");
     $existe_l=0;
     $libros2="
         CREATE TABLE libros (
@@ -72,8 +96,10 @@ function crearTablas($basedatos){
         numero_ejemplar int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY 
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
         ";
-
-    if ($conexion->query($libros2) === true) { 
+    
+    // Pasamos la variable $strInsert para ejecurar el query
+    //print_r ("Estoy aqui1");
+    if ($conexion->query($libros2) === true) { //ejecutando query para la creación de una tabla en MySQL
         
         echo "Tabla libros creada en MYSQL";
         echo "<br>";
@@ -92,7 +118,7 @@ function crearTablas($basedatos){
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     ";
     
-    if ($conexion->query($logins2) === true) { 
+    if ($conexion->query($logins2) === true) { //ejecutando query para la creación de una tabla en MySQL
         
         echo "Tabla logins creada en MYSQL";
         echo "<br>";
@@ -104,8 +130,10 @@ function crearTablas($basedatos){
     }
     
     $conexion->close();
-    if (($existe_l==1) && ($existe_lg==1)) return 1;  
+    if (($existe_l==1) && ($existe_lg==1)) return 1;
+    
 }
+
 
 function usuarioCorrecto($usuario, $password)
 {
@@ -125,18 +153,26 @@ function usuarioCorrecto($usuario, $password)
     return $r;
 }
 
+
+
 function registrarUsuarioMySQLi($usuario, $password)
 {
     $correcto = false;
     
     $conexion  = getConexionMySQLi();
+    //$password = md5($password); //Se puede encriptar mediante php o mediante MySQL
     $sql      = "INSERT INTO logins (usuario,passwd) VALUES (?,md5(?))";
     $consulta = $conexion->prepare($sql);
     $consulta->bind_param("ss",$usuario,$password);
     
     $consulta->execute();
     $consulta->close();
-    $conexion->close();      
+    $conexion->close();
+   
+        
+        
+        
+        
 }
 
 function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
@@ -165,6 +201,30 @@ function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
     }
 }
 
+
+function insertarLibro($titulo, $anyo, $precio, $fechaAdquisicion)
+{
+    $conexion = getConexionPDO();
+    $sql = "INSERT into libros (titulo, anyo_edicion, precio, fecha_adquisicion) values (?,?,?,?)";
+    $sentencia = $conexion->prepare($sql);
+    
+    $sentencia->bindParam(1, $titulo);
+    $sentencia->bindParam(2, $anyo);
+    $sentencia->bindParam(3, $precio);
+    $sentencia->bindParam(4, $fechaAdquisicion);
+    $numero = $sentencia->execute();
+    unset($sentencia);
+    
+    unset($conexion);
+    
+    if($numero==1)
+        return true;
+        return false;
+}
+
+
+
+
 function getLibros()
 {
 	$conexion = getConexionMySQLi();
@@ -185,32 +245,75 @@ function getLibros()
 
 function getLibrosTitulo()
 {
+    /*La tabla libros compuesta por los campos:
+     * titulo, ciudad, conferencia y división
+     * */
     $mysqli = getConexionMySQLi();
     $consulta = "select titulo from libros";
     
     if ($resultado = $mysqli->query($consulta))
     {
         
+        /* obtener el array de objetos */
         while ($libro = $resultado->fetch_object())
         {
             $libros[] = $libro->titulo;
         }
         
+        /* liberar el conjunto de resultados */
         $resultado->close();
     }
     $mysqli->close();
     echo $libros;
     return $libros;
+    
+}
+
+
+
+
+function borrarLibro($numeroEjemplar)
+{
+    $conexion = getConexionPDO();
+    $precio = 0;
+
+    $consulta = "select precio from libros WHERE numero_ejemplar = $numeroEjemplar";
+    if ($resultado = $conexion->query($consulta))
+    {
+        if ($libro = $resultado->fetch())
+        {
+            $precio = $libro['precio'];
+        }
+       unset($resultado);
+    } 
+
+
+
+    $sql = "DELETE FROM libros WHERE numero_ejemplar = ?";
+    $sentencia = $conexion->prepare($sql);
+
+    $sentencia->bindParam(1, $numeroEjemplar);
+    
+    //$numero = $sentencia->execute();
+    unset($sentencia);
+
+    unset($conexion);
+
+    return $precio;
 }
 
 function borrarLibroMySQLi($numeroEjemplar)
 {
     
+    //if($numeroEjemplar===null || !isnumeric($numeroEjemplar)){
+      //  return 0;
+    //}
+    
     $conexion = getConexionMySQLi();
     $precio = 0;
     
-    $todo_bien = true;            
-    $conexion->autocommit(false);
+    $todo_bien = true;            // Definimos una variable para comprobar la ejecuciÃ³n
+    $conexion->autocommit(false); // Deshabilitamos el modo transaccional automÃ¡tico
     
     
     $consulta = "select precio from libros WHERE numero_ejemplar = $numeroEjemplar";
@@ -240,6 +343,7 @@ function borrarLibroMySQLi($numeroEjemplar)
     }
     $consultaDelete->close();
     
+    // Si todo fue bien, confirmamos los cambios y en caso contrario los deshacemos
     if ($todo_bien == true)
     {
         $conexion->commit();
@@ -250,7 +354,11 @@ function borrarLibroMySQLi($numeroEjemplar)
     }
     
     $conexion->close();
-    return $precio;  
+    return $precio;
+    
+    
+        
+    
 }
 
 function modificarLibroMySQLi($numero_ejemplar,$precio)
@@ -265,14 +373,22 @@ function modificarLibroMySQLi($numero_ejemplar,$precio)
     $sqlInsert      = "update libros set precio=? where numero_ejemplar=?";
     $consultaInsert->prepare($sqlInsert);
     
+    
+    //for($i=0;$i<count($numero_ejemplar);$i++)
+    //{
         echo "$numero_ejemplar[0]";
         echo "$precio[0]";
+        //$consultaInsert->bind_param("ds", $precio[$i], $numero_ejemplar[$i]);
         $consultaInsert->bind_param("di", $precio[0], $numero_ejemplar[0]);
         $consultaInsert->execute();
+       // print_r($conexion);
         
         $filasAfectadasInsert = $consultaInsert->affected_rows;
-
-
+        
+  
+    
+    
+    
        $consultaInsert->close();
       
     
@@ -290,6 +406,9 @@ function modificarLibroMySQLi($numero_ejemplar,$precio)
 
 function getLibrosPrecio($libro)
 {
+    /*La tabla jugadores, está compuesta po los campos:
+     * codigo, titulo, procedencia, altura, peso, posición, titulo_equipo
+     * */
     $mysqli = getConexionMySQLi();
     $consulta = "select numero_ejemplar, titulo, precio from libros where titulo = '$libro'";
     
@@ -306,4 +425,9 @@ function getLibrosPrecio($libro)
     $mysqli->close();
     return $libros;
 }
+
+
+
+
+
 ?>
