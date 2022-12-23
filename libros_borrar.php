@@ -10,7 +10,7 @@ if(isset($_POST['borrar']) && isset($_POST["libro"]))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Borrar libros</title>
+	<title>Borrar libros Grupo3</title>
 	<link rel="stylesheet" media="screen" href="css/estilo.css" >
 </head>
 <body>
