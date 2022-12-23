@@ -29,21 +29,19 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
-.aviso {
-    text-align: center;
-}
 /*Estilo la tabla entera*/
 .form-table {
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 80%;
+    width: 500px;
     background-color: rgb(70, 70, 70);
     border-radius: 30px;
     color: white;
 }
 
 .form-header {
+    text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,7 +54,7 @@ body {
     justify-content: space-around;
     align-items: center;
     text-decoration: none;
-    padding: -10px 20px 0;
+    padding: 10px -20px 0;
     color: #ffffff;
     text-transform: uppercase;
     font-size: 14px;

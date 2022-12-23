@@ -24,10 +24,10 @@
 							$libros = getLibrosTitulo();
 							foreach ($libros as $libro) 
 							{
-								echo "<option value='$libro'";
+								echo "<option value='$libro'>";
 								if (isset($_POST['libro']) && $libro == $_POST['libro'])
 									echo " selected='true'";
-								echo ">$libro</option>";
+								echo "$libro</option>";
 							}
 						?>
 					</select>	
@@ -45,10 +45,10 @@
 							$librosprecios = $_POST["librosprecios"];
 							$precio = $_POST["precio"];
 							modificarLibroMySQLi($librosprecios, $precio);
-							echo "<div class='aviso'>Actualizados los precios</div>";
+							echo "<div class="aviso">Actualizados los precios</div>";
 						}
 						else{
-							echo "<div class='aviso'>actualizar'</div>";
+							echo "<div class="aviso">actualizar</div>";
 						}
 					?>
 			</table>

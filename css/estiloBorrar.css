@@ -1,15 +1,24 @@
-body {
-    place-items: center;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-    font-size: 0.75rem; 
-    line-height: 1.15;
-    position: relative;
-    
+/*Estilo para todos los elementos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/*Color fondo */
-body{
+h2{
+    text-align: center;
+}
+
+/*Estilo body*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*Color body*/
+body {
     background: #e554ff;
     background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
@@ -20,53 +29,100 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
-h2 {
-    text-align: center;
-    color: #ffffff;
-    text-decoration: underline
-}
-
-/* Lista */
-li {
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 250px;
-    padding: 15px;
-    margin: 0 auto;
+/*Estilo la tabla entera*/
+.form-table {
     display: flex;
     flex-direction: column;
-    text-align: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-ul {
-    align-items: center;
-}
-
-/*Boton*/
-form {
-    text-align: center;
-}
-input {
-    background-color: #a7e245;
-    color: #ffffff;
-    align-items: center;
-    border: none;
-    border-radius: 50px;
-    padding: 5px;
-    width: 200px;
-    margin: auto;
+    width: 350px;
+    background-color: rgb(70, 70, 70);
+    border-radius: 30px;
+    color: white;
 }
 
-/*Enlace*/
-a {
-    color: #ae31e7;
+.form-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 30px 0;
+}
+
+/*Estilizamos el enlace*/
+.form-enlace {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
-    text-align: center;
-    transition: all 0.5s;
-    margin: auto;
+    padding: 10px 20px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
 }
-a:hover {
-    color:purple; 
-    font-size: 12.05px; 
+
+/*Estilizamos todas las columnas y tablas*/
+table {
+    border-spacing: 0;
+    margin-top: 1rem;
+}
+
+thead {
+    background-color: #a900fd;
+    color: black;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #5d5c5d;;
+}
+
+/*Estilizamos los botones de mostrar y actualizar*/
+.form-table button[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #cc00ff;
+    width: 200px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.form-table button[type="submit"] {
+    border: 0;
+    background: #a727e7;
+    cursor: pointer;
+    border: 2px solid #a727e7;
+}
+.form-table button[type="submit"]:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+/*Colocamos la frase libros en el medio*/
+.form-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilizamos el desplegable*/
+.form-desp {
+    border: none;
+    border-bottom: 1px solid #c9c9c9;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
 }
