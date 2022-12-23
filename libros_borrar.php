@@ -1,8 +1,8 @@
 <?php 
 include_once 'funcionesBaseDatos.php';
-if(isset($_POST['borrar']))
+if(isset($_POST['borrar']) && isset($_POST["libro"]))
 {
-	$mensaje = borrarLibro($_POST['libro']);
+	$mensaje = borrarLibroMySQLi($_POST['libro']);
 }
 
 ?>
