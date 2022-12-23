@@ -42,7 +42,6 @@
 					echo "</tr>\n";
 				}
 				?>
-				?>
 				</tbody>
 			</table>
 			</br>
