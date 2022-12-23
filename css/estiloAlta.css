@@ -1,0 +1,126 @@
+/*Estilo a todo*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    min-height: 85vh;
+    padding: 0 1.5em;
+    animation: fadeInRight;
+    animation-duration: 1s;
+}
+
+/*Color body*/
+body {
+    background: #e554ff;
+    background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
+    background: -webkit-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -o-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -ms-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
+}
+
+/*Estilo al primer div*/
+.form-box {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em;   
+}
+
+/*Estilizamos el titulo y le anyadimos color*/
+.form-title {
+    text-align: center;
+    font-size: 3em;
+}
+
+.form-title span {
+    color: #f83af8;
+}
+
+/*Anyadimos la sombra y el padding a los elementos de dentro*/
+.datos-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.datos-wrapper > *{
+    padding: 1em;
+}
+
+/*Cambiamos el color de el formulario*/
+.datos-form{
+    background: #222222;
+}
+
+/*Dividimos el formulario*/
+.datos-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*Hacemos que el boton ocupe todo el ancho*/
+.datos-form form .block {
+    grid-column: 1 / 3;
+}
+
+.datos-form form p{
+    margin: 0;
+    padding: 1em;
+}
+
+/*Estilizamos todo lo del formulario*/
+.datos-form form button,
+.datos-form form input,
+.datos-form form textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #f83af8;
+    outline: 0;
+    color: #fff;
+}
+
+/*Estilizamos el boton del formulario*/
+.datos-form form button {
+    background: #f83af8;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+/*Damos un efecto al boton*/
+.datos-form form button:hover, 
+.datos-form form button:focus {
+    background: #ac07f2;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+/*Estilizamos la zona de la imagen*/
+.datos-img {
+    text-align: center;
+    background-color: #a836ff;
+}
+
+/*Para pantallas grandes*/
+@media (min-width: 700px) {
+    body {
+        padding: 0 4rem;
+    }
+
+    .datos-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .datos-wrapper > * {
+        padding: 2em;
+    }
+}

@@ -1,0 +1,88 @@
+/*Estilo body*/
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 85vh;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeInLeft;
+    animation-duration: 1s;
+}
+
+/*Color body*/
+body {
+    background: #e554ff;
+    background: -moz-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #e554ff), color-stop(100%, #3b4465));
+    background: -webkit-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -o-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: -ms-linear-gradient(left, #e554ff 0%, #3b4465 100%);
+    background: linear-gradient(to right, #e554ff 0%, #3b4465 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
+}
+
+/*Le damos estilo tanto a la caja como al titulo*/
+.form-box {
+    width: 350px;
+    padding: 25px;
+    background: #ffffff ;
+    text-align: center;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.form-title {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/*Estilizamos columnas*/
+ul, .form-logoff {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #cc00ff;
+    width: 200px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+/*Animacion para cada enlace*/
+ul:hover {
+    width: 220px;
+    border-color: #6f00ff;
+}
+
+/*Estilizamos los enlaces*/
+.form-enlace {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+/*Estilizamos el boton.*/
+.form-logoff {
+    border: 0;
+    background: #6307f8;
+    cursor: pointer;
+    border: 2px solid #6307f8;
+}
+.form-logoff:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
