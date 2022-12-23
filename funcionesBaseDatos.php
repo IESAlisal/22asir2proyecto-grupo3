@@ -2,6 +2,23 @@
 
 include_once 'constantes.php';
 
+function getConexionPDO()
+{
+	$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+	try
+	{
+	    $dwes = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USERNAME, PASSWORD, $opciones);
+	    $dwes->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    return $dwes;
+	}
+	catch(Exception $ex)
+	{
+	    echo "<h4>{$ex->getMessage()}</h4>";
+	    return null;
+	}
+}
+
+
 
 function getConexionMySQLi()
 {
@@ -184,6 +201,30 @@ function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
     }
 }
 
+
+function insertarLibro($titulo, $anyo, $precio, $fechaAdquisicion)
+{
+    $conexion = getConexionPDO();
+    $sql = "INSERT into libros (titulo, anyo_edicion, precio, fecha_adquisicion) values (?,?,?,?)";
+    $sentencia = $conexion->prepare($sql);
+    
+    $sentencia->bindParam(1, $titulo);
+    $sentencia->bindParam(2, $anyo);
+    $sentencia->bindParam(3, $precio);
+    $sentencia->bindParam(4, $fechaAdquisicion);
+    $numero = $sentencia->execute();
+    unset($sentencia);
+    
+    unset($conexion);
+    
+    if($numero==1)
+        return true;
+        return false;
+}
+
+
+
+
 function getLibros()
 {
 	$conexion = getConexionMySQLi();
@@ -226,6 +267,39 @@ function getLibrosTitulo()
     echo $libros;
     return $libros;
     
+}
+
+
+
+
+function borrarLibro($numeroEjemplar)
+{
+    $conexion = getConexionPDO();
+    $precio = 0;
+
+    $consulta = "select precio from libros WHERE numero_ejemplar = $numeroEjemplar";
+    if ($resultado = $conexion->query($consulta))
+    {
+        if ($libro = $resultado->fetch())
+        {
+            $precio = $libro['precio'];
+        }
+       unset($resultado);
+    } 
+
+
+
+    $sql = "DELETE FROM libros WHERE numero_ejemplar = ?";
+    $sentencia = $conexion->prepare($sql);
+
+    $sentencia->bindParam(1, $numeroEjemplar);
+    
+    //$numero = $sentencia->execute();
+    unset($sentencia);
+
+    unset($conexion);
+
+    return $precio;
 }
 
 function borrarLibroMySQLi($numeroEjemplar)
