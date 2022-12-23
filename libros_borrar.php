@@ -36,8 +36,8 @@ if(isset($_POST['borrar']))
 
 							foreach($libros as $libro)
 							{
-								echo "<option value='{$libro->numero_ejemplar}'";
-								echo ">{$libro->titulo} (año {$libro->anyo_edicion})</option>";
+								echo "<option value='{$libro->numero_ejemplar}'>";
+								echo "{$libro->titulo} (año {$libro->anyo_edicion})</option>";
 							}
 								
 							?>
@@ -52,7 +52,7 @@ if(isset($_POST['borrar']))
 					</form>
 				</thead>
 				</br>
-				<a class="form-enlace" href="libros_alta.php">Volver</a>
+				<a class="form-enlace" href="index.php">Volver</a>
 			</table>
 		</div>
 	</body>
