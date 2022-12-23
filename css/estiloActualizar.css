@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 85vh;
     font-family: 'Quicksand', sans-serif;
     animation: fadeInRight;
     animation-duration: 1s;
@@ -120,7 +120,7 @@ td {
 /*Estilizamos el desplegable*/
 .form-desp {
     border: none;
-    border-bottom: 1px solid #c9c9c9;
+    border-bottom: 1px solid #949494;
     border-radius: 15px;
     width: 200px;
     padding: 5px;

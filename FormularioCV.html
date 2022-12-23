@@ -2,17 +2,22 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="author" content="Grupo3 Proyecto ASIR 2">
-		<title> Formulario CV </title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/estiloFormulario.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Grupo3</title>
+    <!-- Fuente -->
+	  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
+    <!-- CSS animado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/estiloFormulario.css">
 	</head>
 	<body>
-		<form action="formulario" name="formulario" method="POST">
-			<fieldset class="fieldset1">
-				<legend class="color1"> <em> PUESTO A SOLICITAR </em> </legend>
+		<form class="form-box" action="formulario" name="formulario" method="POST">
+			<h2 class="form-header"> <em> PUESTO A SOLICITAR </em> </h2>
+                <fieldset class="fieldset1">
+                </br>
                 <p> ¿Qué puesto deseas solicitar?:
-                    <select name="select">
+                    <select class="form-desp" name="select">
                         <option value="none"> Elige una opcion </option>
                         <option value="Direccion"> Director/a </option>
                         <option value="Jefatura"> Jefe/a de estudios </option> 
@@ -23,7 +28,7 @@
                     </select> 
                 </p>
                 <p> Titulacion aportada:
-                    <select name="select">
+                    <select class="form-desp" name="select">
                         <option value="none"> Elige una opcion  </option>
                         <option value="licenciado"> Licenciatura </option>
                         <option value="ingenieria"> Ingenieria </option> 
@@ -33,15 +38,16 @@
                         <option value="other"> Otro </option> 
                     </select>
                 </p>
-                <p> Correo electronico:</p> <input class="input" type="email" name="mail" placeholder="micorreo@educantabria.es"> 	
-                <p> Sube una copia de tu Curriculum Vitae 
-                    <input class="input" type="file" id="cv" name="cv" multiple> </p>
+                <p> Correo electronico:</p> 
+                    <input class="form-email" type="email" name="mail" placeholder="micorreo@educantabria.es"> 	
+                <p> Sube una copia de tu Curriculum Vitae </p>
+                    <input class="form-archi" type="file" id="cv" name="cv" multiple> 
                 <p> ¿Qué te motiva a querer trabajar con nosotros?: </p> 
-                <p> <textarea name="comentarios" placeholder="Comentarios" maxlength="500"> </textarea> </p>
-                <p> <input class="boton" type="reset" value="Borrar"> </p>
-                <p> <input class="boton" type="submit" value="Enviar">     
+                <p> <textarea name="comentarios" placeholder="Comentarios" maxlength="500" cols="40" rows="5" style="resize: both;"> </textarea> </p>
+                <p> <input class="form-btn" type="reset" value="Borrar"> </p>  
                 </fieldset>
-                <p> <a href="index.php">Volver</a></p>
+                <p> <input class="form-btn" type="submit" value="Enviar">   
+                <p> <a class="form-enlace" href="index.php">Volver</a></p>
 		</form>	
 	</body>
 </html>

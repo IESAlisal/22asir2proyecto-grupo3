@@ -4,17 +4,17 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Guardar libros</title>
+		<title>Listado de libros Grupo3</title>
 		<!-- Fuente -->
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
     	<!-- CSS Animado -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-		<link rel="stylesheet" media="screen" href="css/estiloTabla.css" >
+		<link rel="stylesheet" media="screen" href="css/estiloDatos.css" >
 	</head>
 	<body>
 		<div class="form-table">
 			<div class="form-header">
-				<h2>Prueba</h2>
+				<h2>Libros actuales</h2>
 			</div>
 			<table>
 				<thead>
@@ -29,7 +29,7 @@
 				<tbody>
 				<?php
 				require_once 'funcionesBaseDatos.php';
-		
+
 				$libros = getLibros();
 				foreach($libros as $libro)
 				{
@@ -41,6 +41,7 @@
 					echo "<td>{$libro->fecha_adquisicion}</td>";
 					echo "</tr>\n";
 				}
+				?>
 				?>
 				</tbody>
 			</table>

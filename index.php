@@ -12,7 +12,7 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Gestion de libros</title>
+        <title>Index Grupo3</title>
         <!-- Fuente -->
 	    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet"> 
         <!-- CSS Animado -->

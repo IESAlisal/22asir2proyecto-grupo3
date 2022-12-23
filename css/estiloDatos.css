@@ -36,7 +36,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 350px;
+    width: 80%;
     background-color: rgb(70, 70, 70);
     border-radius: 30px;
     color: white;
@@ -55,7 +55,7 @@ body {
     justify-content: space-around;
     align-items: center;
     text-decoration: none;
-    padding: 10px 20px 0;
+    padding: -10px 20px 0;
     color: #ffffff;
     text-transform: uppercase;
     font-size: 14px;
@@ -79,52 +79,5 @@ th {
 td {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #5d5c5d;;
-}
-
-/*Estilizamos los botones de mostrar y actualizar*/
-.form-table button[type="submit"] {
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    padding: 14px 10px;
-    text-align: center;
-    border: 2px solid #cc00ff;
-    width: 200px;
-    outline: none;
-    color: rgb(255, 255, 255);
-    border-radius: 24px;
-    transition: 0.25s;
-}
-
-.form-table button[type="submit"] {
-    border: 0;
-    background: #a727e7;
-    cursor: pointer;
-    border: 2px solid #a727e7;
-}
-.form-table button[type="submit"]:hover {
-    background: none;
-    color: rgb(0, 0, 0);
-}
-
-/*Colocamos la frase libros en el medio*/
-.form-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Estilizamos el desplegable*/
-.form-desp {
-    border: none;
-    border-bottom: 1px solid #c9c9c9;
-    border-radius: 15px;
-    width: 200px;
-    padding: 5px;
-    font-size: 16px;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
+    border-bottom: 1px solid;
 }

@@ -2,24 +2,6 @@
 
 include_once 'constantes.php';
 
-function getConexionPDO()
-{
-	$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-	try
-	{
-	    $dwes = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USERNAME, PASSWORD, $opciones);
-	    $dwes->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	    return $dwes;
-	}
-	catch(Exception $ex)
-	{
-	    echo "<h4>{$ex->getMessage()}</h4>";
-	    return null;
-	}
-}
-
-
-
 function getConexionMySQLi()
 {
     $mysqli = new mysqli(HOST, USERNAME, PASSWORD, DATABASE);
@@ -72,9 +54,7 @@ function crearBBDD($basedatos){
         
     }
     $conexion->close();
-    return $existe;
-   
-    
+    return $existe;  
 }
 
 function crearTablas($basedatos){
@@ -123,8 +103,7 @@ function crearTablas($basedatos){
     }
     
     $conexion->close();
-    if (($existe_l==1) && ($existe_lg==1)) return 1;
-    
+    if (($existe_l==1) && ($existe_lg==1)) return 1;  
 }
 
 
@@ -159,12 +138,7 @@ function registrarUsuarioMySQLi($usuario, $password)
     
     $consulta->execute();
     $consulta->close();
-    $conexion->close();
-   
-        
-        
-        
-        
+    $conexion->close();      
 }
 
 function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
@@ -192,29 +166,6 @@ function insertarLibroMySQLi($titulo, $anyo, $precio, $fechaAdquisicion)
         return false;
     }
 }
-
-
-function insertarLibro($titulo, $anyo, $precio, $fechaAdquisicion)
-{
-    $conexion = getConexionPDO();
-    $sql = "INSERT into libros (titulo, anyo_edicion, precio, fecha_adquisicion) values (?,?,?,?)";
-    $sentencia = $conexion->prepare($sql);
-    
-    $sentencia->bindParam(1, $titulo);
-    $sentencia->bindParam(2, $anyo);
-    $sentencia->bindParam(3, $precio);
-    $sentencia->bindParam(4, $fechaAdquisicion);
-    $numero = $sentencia->execute();
-    unset($sentencia);
-    
-    unset($conexion);
-    
-    if($numero==1)
-        return true;
-        return false;
-}
-
-
 
 
 function getLibros()
@@ -253,39 +204,6 @@ function getLibrosTitulo()
     $mysqli->close();
     echo $libros;
     return $libros;
-    
-}
-
-
-
-
-function borrarLibro($numeroEjemplar)
-{
-    $conexion = getConexionPDO();
-    $precio = 0;
-
-    $consulta = "select precio from libros WHERE numero_ejemplar = $numeroEjemplar";
-    if ($resultado = $conexion->query($consulta))
-    {
-        if ($libro = $resultado->fetch())
-        {
-            $precio = $libro['precio'];
-        }
-       unset($resultado);
-    } 
-
-
-
-    $sql = "DELETE FROM libros WHERE numero_ejemplar = ?";
-    $sentencia = $conexion->prepare($sql);
-
-    $sentencia->bindParam(1, $numeroEjemplar);
-    
-    unset($sentencia);
-
-    unset($conexion);
-
-    return $precio;
 }
 
 function borrarLibroMySQLi($numeroEjemplar)
@@ -325,7 +243,6 @@ function borrarLibroMySQLi($numeroEjemplar)
     }
     $consultaDelete->close();
     
-    // Si todo fue bien, confirmamos los cambios y en caso contrario los deshacemos
     if ($todo_bien == true)
     {
         $conexion->commit();
@@ -336,11 +253,7 @@ function borrarLibroMySQLi($numeroEjemplar)
     }
     
     $conexion->close();
-    return $precio;
-    
-    
-        
-    
+    return $precio;  
 }
 
 function modificarLibroMySQLi($numero_ejemplar,$precio)
@@ -355,22 +268,14 @@ function modificarLibroMySQLi($numero_ejemplar,$precio)
     $sqlInsert      = "update libros set precio=? where numero_ejemplar=?";
     $consultaInsert->prepare($sqlInsert);
     
-    
-    //for($i=0;$i<count($numero_ejemplar);$i++)
-    //{
         echo "$numero_ejemplar[0]";
         echo "$precio[0]";
-        //$consultaInsert->bind_param("ds", $precio[$i], $numero_ejemplar[$i]);
         $consultaInsert->bind_param("di", $precio[0], $numero_ejemplar[0]);
         $consultaInsert->execute();
-       // print_r($conexion);
         
         $filasAfectadasInsert = $consultaInsert->affected_rows;
-        
-  
-    
-    
-    
+
+
        $consultaInsert->close();
       
     
@@ -388,9 +293,6 @@ function modificarLibroMySQLi($numero_ejemplar,$precio)
 
 function getLibrosPrecio($libro)
 {
-    /*La tabla jugadores, está compuesta po los campos:
-     * codigo, titulo, procedencia, altura, peso, posición, titulo_equipo
-     * */
     $mysqli = getConexionMySQLi();
     $consulta = "select numero_ejemplar, titulo, precio from libros where titulo = '$libro'";
     
@@ -407,9 +309,4 @@ function getLibrosPrecio($libro)
     $mysqli->close();
     return $libros;
 }
-
-
-
-
-
 ?>

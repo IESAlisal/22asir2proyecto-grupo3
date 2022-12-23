@@ -11,15 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+Base de datos: `libros`
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `libros`
---
 
 -- --------------------------------------------------------
 
@@ -53,18 +46,6 @@ CREATE TABLE `logins` (
   `usuario` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `passwd` char(32) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `logins`
---
-
-INSERT INTO `logins` (`usuario`, `passwd`) VALUES
-('david', '172522ec1028ab781d9dfd17eaca4427'),
-('nieves', 'c45f3fc0f92e983dea35e4b15213e6d7');
-
---
--- Índices para tablas volcadas
---
 
 --
 -- Indices de la tabla `libros`

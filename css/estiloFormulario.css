@@ -4,17 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-h2{
-    text-align: center;
-}
 
 /*Estilo body*/
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 85vh;
     font-family: 'Quicksand', sans-serif;
+    animation: fadeInRight;
+    animation-duration: 1s;
 }
 
 /*Color body*/
@@ -29,53 +28,115 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e554ff', endColorstr='#3b4465', GradientType=1 );
 }
 
-/*Estilo la tabla entera*/
-.form-table {
-    display: flex;
-    flex-direction: column;
+/*Le damos estilo tanto a la caja como al titulo*/
+.form-box {
+    width: 20%px;
+    padding: 40px;
+    background: #ffffff ;
+    text-align: center;
+    border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 80%;
-    background-color: rgb(70, 70, 70);
-    border-radius: 30px;
-    color: white;
 }
 
 .form-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 5px 30px 0;
 }
 
 /*Estilizamos el enlace*/
 .form-enlace {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-decoration: none;
-    padding: -10px 20px 0;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-/*Estilizamos todas las columnas y tablas*/
-table {
-    border-spacing: 0;
-    margin-top: 1rem;
-}
-
-thead {
-    background-color: #a900fd;
+    background:#e554ff;
+    border: none;
+    border-bottom: 1px solid #c9c9c9;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
     color: black;
-}
-
-th {
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
     text-align: center;
-    border-bottom: 1px solid;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/*Agregamos un efecto al enlace*/
+.form-enlace:hover {
+    background: #a21cf0;
+    color: rgb(253, 253, 253);
+}
+
+/*Estilizamos el boton*/
+.form-btn {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid #cc00ff;
+    width: 200px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+/*Le damos un efecto a los dos botones*/
+.form-btn {
+    border: 0;
+    background: #a727e7;
+    cursor: pointer;
+    border: 2px solid #a727e7;
+}
+.form-btn:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+}
+
+/*Estilizamos el sube tu curriculum*/
+.form-archi {
+    position: relative;
+    display: inline-block;
+}
+
+.form-archi:before {
+    background-color: #a200ff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Sube tu curriculum';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.form-archi input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+}
+
+.form-email {
+    width: 170px;
+}
+
+/*Estilizamos el desplegable*/
+.form-desp {
+    background: #d0d9f8;
+    border: none;
+    border-bottom: 2.5px solid #c9c9c9;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
 }
